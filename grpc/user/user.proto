@@ -1,0 +1,98 @@
+syntax = "proto3";
+
+package user;
+
+import "google/protobuf/timestamp.proto";
+
+service UserService {
+    rpc Add (AddRequest) returns (Response) {
+    }
+    rpc Update (UpdateRequest) returns (Response) {
+    }
+    rpc Enable (EnableRequest) returns (Response) {
+    }
+    rpc Disable (DisableRequest) returns (Response) {
+    }
+    rpc Login (LoginRequest) returns (Response) {
+    }
+    rpc List (ListRequest) returns (UserResponse) {
+    }
+}
+
+message AddRequest {
+    string loginName = 1;
+    string password = 2;
+    Channel channel = 3;
+    Type type = 4;
+}
+
+message UpdateRequest {
+    int64 id = 1;
+    string loginName = 2;
+    string password = 3;
+    Channel channel = 4;
+    Type type = 5;
+}
+
+message EnableRequest {
+    int64 id = 1;
+}
+
+message DisableRequest {
+    int64 id = 1;
+}
+
+message LoginRequest {
+    string loginName = 1;
+    string password = 2;
+    Channel channel = 3;
+    Type type = 4;
+}
+
+message ListRequest {
+}
+
+message Response {
+    string code = 1;
+    string message = 2;
+}
+
+message UserResponse {
+    string code = 1;
+    repeated User body = 2;
+    string message = 3;
+    Extra extra = 4;
+}
+
+message User {
+    int64 id = 1;
+    string loginName = 2;
+    string password = 3;
+    Channel channel = 4;
+    Type type = 5;
+    bool status = 6;
+    google.protobuf.Timestamp createdTime = 7;
+    google.protobuf.Timestamp lastModifiedTime = 8;
+}
+
+message Extra {
+    int64 totalCount = 1;
+    int64 currentPage = 2;
+    int64 totalPages = 3;
+    bool isFirst = 4;
+    bool isLast = 5;
+}
+
+enum Channel {
+    REGISTER = 0;
+    FACEBOOK = 1;
+    WHATSAPP = 2;
+    INSTAGRAM = 3;
+    WECHART = 4;
+    QQ = 5;
+}
+
+enum Type {
+    MANAGEMENT = 0;
+    WORD = 1;
+}
