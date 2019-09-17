@@ -6,7 +6,7 @@ CREATE TABLE `sillyhat_user`.`user`
   `password`           varchar(50)  NOT NULL,
   `channel`            int                   DEFAULT NULL,
   `type`               int                   DEFAULT NULL,
-  `status`             tinyint(1)            DEFAULT TRUE,
+  `status`             varchar(10),
   `created_time`       timestamp(3) NOT NULL DEFAULT current_timestamp(3),
   `last_modified_time` timestamp(3) NOT NULL DEFAULT current_timestamp(3) ON UPDATE current_timestamp(3),
   PRIMARY KEY (`id`),
