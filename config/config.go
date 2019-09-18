@@ -6,21 +6,19 @@ type config struct {
 	Project   string
 	Module    string
 	Host      string
-	HttpPort  int               `toml:"http_port"`
 	GRPCPort  int               `toml:"grpc_port"`
 	Log       logConf           `toml:"log_conf"`
-	DB        database          `toml:"database"`
 	EnvConfig environmentConfig `toml:"env_config"`
 }
 
 type environmentConfig struct {
+	UserName      string `toml:"user_name" env:"SILLYHAT.DB.USER.USERNAME"`
+	Password      string `toml:"password" env:"SILLYHAT.DB.USER.PASSWORD"`
+	Host          string `toml:"host" env:"SILLYHAT.DB.USER.HOST"`
+	Port          string `toml:"port" env:"SILLYHAT.DB.USER.PORT"`
+	Schema        string `toml:"schema" env:"SILLYHAT.DB.USER.SCHEMA"`
 	LogstashURL   string `toml:"logstash_url" env:"SILLYHAT.LOGSTASH.URL"`
 	ConsulAddress string `toml:"consul_address" env:"SILLYHAT.HOST.CONSUL"`
-}
-
-type database struct {
-	DataSourceName string `toml:"data_source_name"`
-	DDLPath        string `toml:"ddl_path"`
 }
 
 type logConf struct {
