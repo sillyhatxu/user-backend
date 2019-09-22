@@ -73,16 +73,16 @@ func Enable(id int64) error {
 const findByLoginNameAndChannelAndTypeSQL = `
 	SELECT *
 	FROM user
-	WHERE login_name = ?, password = ?, channel = ?, type = ?
+	WHERE login_name = ? and channel = ? and type = ?
 `
 
 func FindByLoginNameAndChannelAndType(loginName string, channel user.Channel, userType user.Type) (*model.User, error) {
-	var u model.User
+	var u *model.User
 	err := client.FindFirst(findByLoginNameAndChannelAndTypeSQL, &u, loginName, channel, userType)
 	if err != nil {
 		return nil, err
 	}
-	return &u, nil
+	return u, nil
 }
 
 const findListSQL = `

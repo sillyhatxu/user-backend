@@ -11,7 +11,7 @@ import (
 	"github.com/sillyhatxu/logrus-client/logstashhook"
 	"github.com/sillyhatxu/user-backend/config"
 	"github.com/sillyhatxu/user-backend/dao"
-	"github.com/sillyhatxu/user-backend/grpc"
+	"github.com/sillyhatxu/user-backend/grpc/grpcserver"
 	"github.com/sirupsen/logrus"
 	"net"
 )
@@ -70,7 +70,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	go grpc.InitialGRPC(grpcListener)
+	go grpcserver.InitialGRPC(grpcListener)
 	forever := make(chan bool)
 	<-forever
 }

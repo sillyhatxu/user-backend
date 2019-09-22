@@ -53,12 +53,12 @@ message ListRequest {
 }
 
 message Response {
-    ResponseCode code = 1;
+    uint32 code = 1;
     string message = 2;
 }
 
 message UserResponse {
-    ResponseCode code = 1;
+    uint32 code = 1;
     repeated User body = 2;
     string message = 3;
     Extra extra = 4;
@@ -92,12 +92,9 @@ enum Channel {
     QQ = 5;
 }
 
-enum ResponseCode {
-    SUCCESS = 0;
-    ERROR = -1;
-}
-
 enum Type {
     MANAGEMENT = 0;
-    WORD = 1;
+    SHORT_URL = 1;
+    LEARNING_ENGLISH = 2;
+    BATTLE_OF_TANK = 3;
 }

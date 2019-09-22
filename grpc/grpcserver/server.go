@@ -1,4 +1,4 @@
-package grpc
+package grpcserver
 
 import (
 	"context"
@@ -9,13 +9,14 @@ import (
 	"github.com/sillyhatxu/user-backend/service"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/health"
 	hv1 "google.golang.org/grpc/health/grpc_health_v1"
 	"net"
 )
 
 func InitialGRPC(listener net.Listener) {
-	logrus.Info("---------- initial grpc server ----------")
+	logrus.Info("initial grpc server")
 	server := grpc.NewServer()
 
 	healthServer := health.NewServer()
@@ -43,7 +44,7 @@ func (u *User) Add(ctx context.Context, in *user.AddRequest) (*user.Response, er
 		return nil, err
 	}
 	return &user.Response{
-		Code:    user.ResponseCode_SUCCESS,
+		Code:    uint32(codes.OK),
 		Message: "Success",
 	}, nil
 }
@@ -61,7 +62,7 @@ func (u *User) Update(ctx context.Context, in *user.UpdateRequest) (*user.Respon
 		return nil, err
 	}
 	return &user.Response{
-		Code:    user.ResponseCode_SUCCESS,
+		Code:    uint32(codes.OK),
 		Message: "Success",
 	}, nil
 }
@@ -72,7 +73,7 @@ func (u *User) Enable(ctx context.Context, in *user.EnableRequest) (*user.Respon
 		return nil, err
 	}
 	return &user.Response{
-		Code:    user.ResponseCode_SUCCESS,
+		Code:    uint32(codes.OK),
 		Message: "Success",
 	}, nil
 }
@@ -83,7 +84,7 @@ func (u *User) Disable(ctx context.Context, in *user.DisableRequest) (*user.Resp
 		return nil, err
 	}
 	return &user.Response{
-		Code:    user.ResponseCode_SUCCESS,
+		Code:    uint32(codes.OK),
 		Message: "Success",
 	}, nil
 }
@@ -91,16 +92,10 @@ func (u *User) Disable(ctx context.Context, in *user.DisableRequest) (*user.Resp
 func (u *User) Login(ctx context.Context, in *user.LoginRequest) (*user.Response, error) {
 	err := service.Login(in.LoginName, in.Password, in.Channel, in.Type)
 	if err != nil {
-		//if err == responsecode.InvalidLoginNameOrPasswordError {
-		//	return &user.Response{
-		//		Code:    responsecode.Success,
-		//		Message: responsecode.Success,
-		//	}, nil
-		//}
 		return nil, err
 	}
 	return &user.Response{
-		Code:    user.ResponseCode_SUCCESS,
+		Code:    uint32(codes.OK),
 		Message: "Success",
 	}, nil
 }

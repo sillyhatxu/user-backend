@@ -179,7 +179,7 @@
   version = "v1.0.4"
 
 [[projects]]
-  digest = "1:c2e768de3160aa40697525770e1d925e9c2387613d8d637d09a620c64c884c3c"
+  digest = "1:b18894911513d0d197fab395c7321510d9556eae055acb89e5f787f6fb30ee9c"
   name = "github.com/sillyhatxu/logrus-client"
   packages = [
     ".",
@@ -190,8 +190,8 @@
     "tcpclient",
   ]
   pruneopts = "UT"
-  revision = "66d1484c333f48cef0d9322384f3451034b749ca"
-  version = "v3.0.1"
+  revision = "0549131acd338cbe51db826e6d643d307148cda8"
+  version = "v3.0.2"
 
 [[projects]]
   digest = "1:7a8299112db25d3edb674a5bfe16f4705764497e120d8fdac0eb648506ea24b8"
