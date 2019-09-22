@@ -1,4 +1,4 @@
-package responsecode
+package responseerror
 
 import "errors"
 

@@ -17,6 +17,7 @@ type environmentConfig struct {
 	Host          string `toml:"host" env:"SILLYHAT.DB.USER.HOST"`
 	Port          string `toml:"port" env:"SILLYHAT.DB.USER.PORT"`
 	Schema        string `toml:"schema" env:"SILLYHAT.DB.USER.SCHEMA"`
+	DDLPath       string `toml:"ddl_path" env:"SILLYHAT.DB.USER.DDL.PATH"`
 	LogstashURL   string `toml:"logstash_url" env:"SILLYHAT.LOGSTASH.URL"`
 	ConsulAddress string `toml:"consul_address" env:"SILLYHAT.HOST.CONSUL"`
 }

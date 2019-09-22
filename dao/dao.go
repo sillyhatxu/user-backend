@@ -11,9 +11,10 @@ import (
 
 var client *dbclient.MysqlClient
 
-func Initial(dataSourceName string) error {
-	client = dbclient.NewMysqlClientConf(dataSourceName)
-	return client.Initial()
+func Initial(dataSourceName, ddlPath string) error {
+	mysqlClient, err := dbclient.NewMysqlClient(dataSourceName, dbclient.DDLPath(ddlPath))
+	client = mysqlClient
+	return err
 }
 
 const insertSQL = `

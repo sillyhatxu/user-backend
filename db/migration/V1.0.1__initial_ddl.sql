@@ -1,7 +1,6 @@
-DROP TABLE IF EXISTS `sillyhat_user`.`user`;
-CREATE TABLE `sillyhat_user`.`user`
+CREATE TABLE IF NOT EXISTS `user`
 (
-  `id`                 bigint(20)   NOT NULL AUTO_INCREMENT,
+  `id`                 bigint(48)   NOT NULL AUTO_INCREMENT,
   `login_name`         varchar(50)  NOT NULL,
   `password`           varchar(50)  NOT NULL,
   `channel`            int                   DEFAULT NULL,

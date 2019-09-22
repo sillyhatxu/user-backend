@@ -92,8 +92,8 @@
   name = "github.com/hashicorp/serf"
   packages = ["coordinate"]
   pruneopts = "UT"
-  revision = "15cfd05de3dffb3664aa37b06e91f970b825e380"
-  version = "v0.8.3"
+  revision = "d0144799968225d12af441bef64e45c9740b95eb"
+  version = "v0.8.4"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -194,12 +194,12 @@
   version = "v3.0.1"
 
 [[projects]]
-  digest = "1:6bf718f7f53252f0c49e40be7fc815953c72fdaa1c4605df44323680d966c510"
+  digest = "1:7a8299112db25d3edb674a5bfe16f4705764497e120d8fdac0eb648506ea24b8"
   name = "github.com/sillyhatxu/mysql-client"
   packages = ["."]
   pruneopts = "UT"
-  revision = "924f63425672bf9c5ffb33c6f647104318727e4c"
-  version = "v1.0.4"
+  revision = "0e021e6238ad51c3bfb054d1098624201d4b3147"
+  version = "v1.0.5"
 
 [[projects]]
   digest = "1:76e0be37969db3c796e3fac2739bc15c0618c6a33ec1670e878eb35fcd79677a"
@@ -239,15 +239,15 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "c8589233b77dde5edd2205ba8a4fb5c9c2472556"
+  revision = "1a5e07d1ff72da30f660d3c95b312a20be31173c"
 
 [[projects]]
   branch = "master"
-  digest = "1:ec9d9815894f067c7878330735b9e4dfa6dc61234d2ba136b60a1436d6b5ea94"
+  digest = "1:efaeaf7e03393d54963ece1e4c1866915d712a07adf4be8ea8105a67e3418e8f"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "b4ddaad3f8a36719f2b8bc6486c14cc468ca2bb5"
+  revision = "ef0ce1748380fdf001bd0ff86a45329a12945357"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -279,8 +279,8 @@
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
   pruneopts = "UT"
-  revision = "5f2a59506353b8d5ba8cbbcd9f3c1f41f1eaf079"
-  version = "v1.6.2"
+  revision = "c71d63e301d75423acb410203c747cad31e9a5e7"
+  version = "v1.6.3"
 
 [[projects]]
   branch = "master"

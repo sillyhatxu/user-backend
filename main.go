@@ -54,7 +54,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s",
+	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
 		config.Conf.EnvConfig.UserName,
 		config.Conf.EnvConfig.Password,
 		config.Conf.EnvConfig.Host,
@@ -62,7 +62,7 @@ func main() {
 		config.Conf.EnvConfig.Schema,
 	)
 	logrus.Infof("dataSourceName : %s", dataSourceName)
-	err = dao.Initial(dataSourceName)
+	err = dao.Initial(dataSourceName, config.Conf.EnvConfig.DDLPath)
 	if err != nil {
 		panic(err)
 	}

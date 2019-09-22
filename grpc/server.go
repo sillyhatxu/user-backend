@@ -6,7 +6,6 @@ import (
 	"github.com/sillyhatxu/user-backend/enums"
 	"github.com/sillyhatxu/user-backend/grpc/user"
 	"github.com/sillyhatxu/user-backend/model"
-	"github.com/sillyhatxu/user-backend/responsecode"
 	"github.com/sillyhatxu/user-backend/service"
 	"github.com/sirupsen/logrus"
 	"google.golang.org/grpc"
@@ -44,8 +43,8 @@ func (u *User) Add(ctx context.Context, in *user.AddRequest) (*user.Response, er
 		return nil, err
 	}
 	return &user.Response{
-		Code:    responsecode.Success,
-		Message: responsecode.Success,
+		Code:    user.ResponseCode_SUCCESS,
+		Message: "Success",
 	}, nil
 }
 
@@ -62,8 +61,8 @@ func (u *User) Update(ctx context.Context, in *user.UpdateRequest) (*user.Respon
 		return nil, err
 	}
 	return &user.Response{
-		Code:    responsecode.Success,
-		Message: responsecode.Success,
+		Code:    user.ResponseCode_SUCCESS,
+		Message: "Success",
 	}, nil
 }
 
@@ -73,8 +72,8 @@ func (u *User) Enable(ctx context.Context, in *user.EnableRequest) (*user.Respon
 		return nil, err
 	}
 	return &user.Response{
-		Code:    responsecode.Success,
-		Message: responsecode.Success,
+		Code:    user.ResponseCode_SUCCESS,
+		Message: "Success",
 	}, nil
 }
 
@@ -84,8 +83,8 @@ func (u *User) Disable(ctx context.Context, in *user.DisableRequest) (*user.Resp
 		return nil, err
 	}
 	return &user.Response{
-		Code:    responsecode.Success,
-		Message: responsecode.Success,
+		Code:    user.ResponseCode_SUCCESS,
+		Message: "Success",
 	}, nil
 }
 
@@ -101,8 +100,8 @@ func (u *User) Login(ctx context.Context, in *user.LoginRequest) (*user.Response
 		return nil, err
 	}
 	return &user.Response{
-		Code:    responsecode.Success,
-		Message: responsecode.Success,
+		Code:    user.ResponseCode_SUCCESS,
+		Message: "Success",
 	}, nil
 }
 

@@ -53,12 +53,12 @@ message ListRequest {
 }
 
 message Response {
-    string code = 1;
+    ResponseCode code = 1;
     string message = 2;
 }
 
 message UserResponse {
-    string code = 1;
+    ResponseCode code = 1;
     repeated User body = 2;
     string message = 3;
     Extra extra = 4;
@@ -90,6 +90,11 @@ enum Channel {
     INSTAGRAM = 3;
     WECHART = 4;
     QQ = 5;
+}
+
+enum ResponseCode {
+    SUCCESS = 0;
+    ERROR = -1;
 }
 
 enum Type {

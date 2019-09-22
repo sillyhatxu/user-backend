@@ -3,7 +3,6 @@ package grpc
 import (
 	"context"
 	"github.com/sillyhatxu/user-backend/grpc/user"
-	"github.com/sillyhatxu/user-backend/responsecode"
 	"github.com/stretchr/testify/assert"
 	"google.golang.org/grpc"
 	"testing"
@@ -38,5 +37,5 @@ func TestUser_Add(t *testing.T) {
 		panic(err)
 	}
 	assert.NotNil(t, response)
-	assert.EqualValues(t, response.Code, responsecode.Success)
+	assert.EqualValues(t, response.Code, user.ResponseCode_SUCCESS)
 }
