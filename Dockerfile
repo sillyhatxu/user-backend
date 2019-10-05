@@ -1,4 +1,5 @@
-FROM xushikuan/alpine-build:3.0 AS builder
+#FROM xushikuan/alpine-build:3.0 AS builder
+FROM golang:1.13 AS builder
 
 ENV WORK_DIR=$GOPATH/src/github.com/sillyhatxu/user-backend
 WORKDIR $WORK_DIR
