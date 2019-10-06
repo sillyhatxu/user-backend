@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/BurntSushi/toml"
 	"github.com/sillyhatxu/consul-client"
 	"github.com/sillyhatxu/environment-config"
 	"github.com/sillyhatxu/logrus-client"
@@ -14,21 +13,16 @@ import (
 	"github.com/sillyhatxu/user-backend/grpc/grpcserver"
 	"github.com/sirupsen/logrus"
 	"net"
+	"os"
 )
 
 func init() {
 	cfgFile := flag.String("c", "config-local.conf", "config file")
 	flag.Parse()
-	err := envconfig.ParseEnvironmentConfig(&config.Conf.EnvConfig)
+	err := envconfig.ParseConfig(&config.Conf, envconfig.ConfigFile(*cfgFile), envconfig.Environment(os.Getenv("env")))
 	if err != nil {
 		panic(err)
 	}
-	envconfig.ParseConfig(*cfgFile, func(content []byte) {
-		err := toml.Unmarshal(content, &config.Conf)
-		if err != nil {
-			panic(fmt.Sprintf("unmarshal toml object error. %v", err))
-		}
-	})
 	fields := logrus.Fields{
 		"project":  config.Conf.Project,
 		"module":   config.Conf.Module,
@@ -38,13 +32,13 @@ func init() {
 	logrusconf.NewLogrusConfig(
 		logrusconf.Fields(fields),
 		logrusconf.FileConfig(filehook.NewFileConfig(config.Conf.Log.FilePath, filehook.Open(config.Conf.Log.OpenLogfile))),
-		logrusconf.LogstashConfig(logstashhook.NewLogstashConfig(config.Conf.EnvConfig.LogstashURL, logstashhook.Open(config.Conf.Log.OpenLogstash), logstashhook.Fields(fields))),
+		logrusconf.LogstashConfig(logstashhook.NewLogstashConfig(config.Conf.LogstashURL, logstashhook.Open(config.Conf.Log.OpenLogstash), logstashhook.Fields(fields))),
 	).Initial()
 }
 
 func main() {
 	consulServer := consul.NewConsulServer(
-		config.Conf.EnvConfig.ConsulAddress,
+		config.Conf.HostConsul,
 		config.Conf.Module,
 		config.Conf.Host,
 		config.Conf.GRPCPort,
@@ -55,14 +49,14 @@ func main() {
 		panic(err)
 	}
 	dataSourceName := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s?parseTime=true",
-		config.Conf.EnvConfig.UserName,
-		config.Conf.EnvConfig.Password,
-		config.Conf.EnvConfig.Host,
-		config.Conf.EnvConfig.Port,
-		config.Conf.EnvConfig.Schema,
+		config.Conf.DBUserUserName,
+		config.Conf.DBUserPassword,
+		config.Conf.DBUserHost,
+		config.Conf.DBUserPort,
+		config.Conf.DBUserSchema,
 	)
 	logrus.Infof("dataSourceName : %s", dataSourceName)
-	err = dao.Initial(dataSourceName, config.Conf.EnvConfig.DDLPath)
+	err = dao.Initial(dataSourceName, config.Conf.DBDDLPath)
 	if err != nil {
 		panic(err)
 	}

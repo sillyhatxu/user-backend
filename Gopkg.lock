@@ -92,8 +92,8 @@
   name = "github.com/hashicorp/serf"
   packages = ["coordinate"]
   pruneopts = "UT"
-  revision = "d0144799968225d12af441bef64e45c9740b95eb"
-  version = "v0.8.4"
+  revision = "1d3fdf93bbe5002c5023da50402368a817488691"
+  version = "v0.8.5"
 
 [[projects]]
   digest = "1:31e761d97c76151dde79e9d28964a812c46efc5baee4085b86f68f0c654450de"
@@ -171,15 +171,15 @@
   version = "v1.0.1"
 
 [[projects]]
-  digest = "1:26f6735ffd8c92ba6786aa736b8bebb286fcf9c68b3dea6b9d1d92f867b59011"
+  digest = "1:a498b4b74634ace3e4a202d72122162fd6458890db9a687095c5a1f7d16a2e2a"
   name = "github.com/sillyhatxu/environment-config"
   packages = ["."]
   pruneopts = "UT"
-  revision = "acad9197b9ee62418df9559a2ecfbfede2e7195a"
-  version = "v1.0.4"
+  revision = "0c3b3c965140252597243a4b3c0e43647dc66aa6"
+  version = "v1.0.6"
 
 [[projects]]
-  digest = "1:b18894911513d0d197fab395c7321510d9556eae055acb89e5f787f6fb30ee9c"
+  digest = "1:978fe32a9d22bd70882f00fd834e066ec41fbc0b2b1d0225fb97fd2f13207e82"
   name = "github.com/sillyhatxu/logrus-client"
   packages = [
     ".",
@@ -190,16 +190,16 @@
     "tcpclient",
   ]
   pruneopts = "UT"
-  revision = "0549131acd338cbe51db826e6d643d307148cda8"
-  version = "v3.0.2"
+  revision = "6dc776fdd457aa39736bd6c9878d70d5be3e1f79"
+  version = "v3.0.3"
 
 [[projects]]
-  digest = "1:7a8299112db25d3edb674a5bfe16f4705764497e120d8fdac0eb648506ea24b8"
+  digest = "1:bee9d59b5c8e9fe0814c9f1674a22c8cdb5ae0313d6e0ba2e70f2d64bc6de666"
   name = "github.com/sillyhatxu/mysql-client"
   packages = ["."]
   pruneopts = "UT"
-  revision = "0e021e6238ad51c3bfb054d1098624201d4b3147"
-  version = "v1.0.5"
+  revision = "7bb4099b1bddf621b18c10e023a73cc1441c2160"
+  version = "v1.0.7"
 
 [[projects]]
   digest = "1:76e0be37969db3c796e3fac2739bc15c0618c6a33ec1670e878eb35fcd79677a"
@@ -227,10 +227,9 @@
 
 [[projects]]
   branch = "master"
-  digest = "1:970a34b46fc4d6dcea441fb2f1419c40fa47fd53fc800bbf0951efda11d99df7"
+  digest = "1:484c8bf6b3155a318ef96834afd9777b05a64fb6585ffadbfa12cac91ad9e618"
   name = "golang.org/x/net"
   packages = [
-    "context",
     "http/httpguts",
     "http2",
     "http2/hpack",
@@ -239,15 +238,15 @@
     "trace",
   ]
   pruneopts = "UT"
-  revision = "1a5e07d1ff72da30f660d3c95b312a20be31173c"
+  revision = "d98b1b4438230571bd7fbc5aaa89843e92937bd3"
 
 [[projects]]
   branch = "master"
-  digest = "1:efaeaf7e03393d54963ece1e4c1866915d712a07adf4be8ea8105a67e3418e8f"
+  digest = "1:84ed4fd3f7c52941feec4832e385f61377a01b4c98a0f868f16f10c2469fc0fe"
   name = "golang.org/x/sys"
   packages = ["unix"]
   pruneopts = "UT"
-  revision = "ef0ce1748380fdf001bd0ff86a45329a12945357"
+  revision = "c178f38b412c7b426e4e97be2e75d11ff7b8d4d4"
 
 [[projects]]
   digest = "1:8d8faad6b12a3a4c819a3f9618cb6ee1fa1cfc33253abeeea8b55336721e3405"
@@ -279,8 +278,8 @@
   name = "google.golang.org/appengine"
   packages = ["cloudsql"]
   pruneopts = "UT"
-  revision = "c71d63e301d75423acb410203c747cad31e9a5e7"
-  version = "v1.6.3"
+  revision = "bddb1f54ecfd64b1350fd2dd897fa11d426632bc"
+  version = "v1.6.4"
 
 [[projects]]
   branch = "master"
@@ -288,10 +287,10 @@
   name = "google.golang.org/genproto"
   packages = ["googleapis/rpc/status"]
   pruneopts = "UT"
-  revision = "f660b865573183437d2d868f703fe88bb8af0b55"
+  revision = "c459b9ce5143dd819763d9329ff92a8e35e61bd9"
 
 [[projects]]
-  digest = "1:cf0d541de126d13cf9187c90a8f84df915f603656b59e78778d043cb3dc1ba94"
+  digest = "1:7d3dc9da8a606ed421ace211357afdc4bdd8ee8eb7dd2c38677c71d2382a7dee"
   name = "google.golang.org/grpc"
   packages = [
     ".",
@@ -331,22 +330,21 @@
     "tap",
   ]
   pruneopts = "UT"
-  revision = "39e8a7b072a67ca2a75f57fa2e0d50995f5b22f6"
-  version = "v1.23.1"
+  revision = "f6d0f9ee430895e87ef1ceb5ac8f39725bafceef"
+  version = "v1.24.0"
 
 [[projects]]
-  digest = "1:4d2e5a73dc1500038e504a8d78b986630e3626dc027bc030ba5c75da257cdb96"
+  digest = "1:59f10c1537d2199d9115d946927fe31165959a95190849c82ff11e05803528b0"
   name = "gopkg.in/yaml.v2"
   packages = ["."]
   pruneopts = "UT"
-  revision = "51d6538a90f86fe93ac480b35f37b2be17fef232"
-  version = "v2.2.2"
+  revision = "f221b8435cfb71e54062f6c6e99e9ade30b124d5"
+  version = "v2.2.4"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/BurntSushi/toml",
     "github.com/golang/protobuf/proto",
     "github.com/golang/protobuf/ptypes/timestamp",
     "github.com/sillyhatxu/consul-client",
